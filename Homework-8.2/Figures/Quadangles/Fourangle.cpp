@@ -5,19 +5,19 @@
 
 using namespace std;
 
-string Fourangle::getSides() {
+string fourangle::getSides() {
 
     string text = "Стороны: a = " + to_string(a) + " b = " + to_string(b) + " c = " + to_string(c) + " d = " + to_string(d) + "\n" +
         "Углы : A = " + to_string(A) + " B = " + to_string(B) + " C = " + to_string(C) + " D = " + to_string(D);
     return text;
 };
 
-void Fourangle::getSidesCount() {
+void fourangle::getSidesCount() {
 
     cout << "Четырехугольник: " << endl << getSides() << endl;
 }
 
-Fourangle::Fourangle(int a, int b, int c, int d, int A, int B, int C, int D) {
+fourangle::fourangle(int a, int b, int c, int d, int A, int B, int C, int D) {
 
     numSides = 4;
     if (a == 0 || b == 0 || c == 0 || d == 0) {

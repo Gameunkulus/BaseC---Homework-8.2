@@ -4,7 +4,7 @@
 using namespace std;
 
 
-class Fourangle : public Figure {
+class fourangle : public figure {
 
 protected:
 	int a, b, c, d;
@@ -12,6 +12,6 @@ protected:
 public:
 	void getSidesCount() override;
 	string getSides() override;
-	Fourangle(int a, int b, int c, int d, int A, int B, int C, int D);
+	fourangle(int a, int b, int c, int d, int A, int B, int C, int D);
 };
 

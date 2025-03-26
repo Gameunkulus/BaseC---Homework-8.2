@@ -1,11 +1,12 @@
 #pragma once
-#include "Fourangle.h"
 #include <iostream>;
+#include "Fourangle.h"
+
 using namespace std;
 
-class Rectangle : public Fourangle {
+class rectangle : public fourangle {
 
 public:
 	void getSidesCount() override;
-	Rectangle(int a, int b);
+	rectangle(int a, int b);
 };
