@@ -1,27 +1,37 @@
 
-#include <iostream>
-#include "Parallelogram.h"
-#include <string>
+#include <iostream>;
+#include "Parallelogram.h";
+#include "..\FigureException.h"
+#include <string>;
 
 using namespace std;
 
-void Parallelogram::getSidesCount() {
+void ObjParallelogram::getSidesCount() {
 
     cout << "Параллелограм: " << endl << getSides() << endl;
 }
 
-Parallelogram::Parallelogram(int a, int b, int A, int B) : Fourangle(a, b, a, b, A, B, A, B) {
+ObjParallelogram::ObjParallelogram(int a, int b, int c, int d, int A, int B, int C, int D) : ObjFourangle(a, b, c, d, A, B, C, D) {
 
     numSides = 4;
     if (a == 0 || b == 0 || c == 0 || d == 0) {
-        cout << "Ошибка, стороны четырехугольника не могут быть равны нулю." << endl;
-        return;
+        throw figureException("Ошибка, стороны параллелограма не могут быть равны нулю.");
+    }
+    else if (a != c || b != d) {
+        throw figureException("Ошибка, стороны параллелограма не могут быть не равны друг другу.");
+    }
+    else if (A != C || B != D) {
+        throw figureException("Ошибка, углы параллелограма не могут быть не равны друг другу.");
     }
     else {
         this->a = a;
         this->b = b;
+        this->c = c;
+        this->d = d;
         this->A = A;
         this->B = B;
+        this->C = C;
+        this->D = D;
 
     };
 };

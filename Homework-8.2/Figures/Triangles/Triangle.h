@@ -4,7 +4,7 @@
 using namespace std;
 
 
-class Triangle : public Figure {
+class ObjTriangle : public ObjFigure {
 
 protected:
 	int a, b, c;
@@ -12,7 +12,7 @@ protected:
 public:
 	void getSidesCount() override;
 	string getSides() override;
-	Triangle(int a, int b, int c, int A, int B, int C);
+	ObjTriangle(int a, int b, int c, int A, int B, int C);
 };
 
 

@@ -2,29 +2,33 @@
 #include <iostream>
 #include "RectTriangle.h"
 #include <string>
+#include "../FigureException.h"
 
 using namespace std;
 
-void RectTriangle::getSidesCount() {
+void ObjRectTriangle::getSidesCount() {
 
     cout << "Прямоугольный треугольник: " << endl << getSides() << endl;
 }
 
-RectTriangle::RectTriangle(int a, int b, int c, int A, int B): Triangle(a,b,c,A,B,90) {
+ObjRectTriangle::ObjRectTriangle(int a, int b, int c, int A, int B, int C): ObjTriangle(a, b, c, A, B, C) {
 
     numSides = 3;
 
     if (a == 0 || b == 0 || c == 0) {
-        cout << "Ошибка, стороны треугольника не могут быть равны нулю." << endl;
+        throw figureException("Ошибка, стороны треугольника не могут быть равны нулю.");
     }
-    else if (A == 0 || B == 0) {
-        cout << "Ошибка, углы треугольника не могут быть равны нулю." << endl;
+    else if (A == 0 || B == 0 || C == 0) {
+        throw figureException("Ошибка, углы треугольника не могут быть равны нулю.");
     }
     else if ((a + b) < c || (b + c) < a || (c + a) < b) {
-        cout << "Ошибка, недопустимые значения сторон треугольника." << endl;
+        throw figureException("Ошибка, недопустимые значения сторон треугольника.");
+    }
+    else if (C != 90) {
+        throw figureException("Ошибка, сумма значений углов не могут быть больше 180.");
     }
     else if ((A + B) > 90) {
-        cout << "Ошибка, сумма значений углов не могут быть больше 180." << endl;
+        throw figureException("Ошибка, сумма значений углов не могут быть больше 180.");
     }
     else {
         this->a = a;
@@ -32,5 +36,6 @@ RectTriangle::RectTriangle(int a, int b, int c, int A, int B): Triangle(a,b,c,A,
         this->c = c;
         this->A = A;
         this->B = B;
+        this->C = C;
     };
 };

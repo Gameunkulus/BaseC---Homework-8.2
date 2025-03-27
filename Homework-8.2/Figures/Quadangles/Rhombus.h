@@ -3,9 +3,9 @@
 #include <iostream>;
 using namespace std;
 
-class Rhombus : public Fourangle {
+class ObjRhombus : public ObjFourangle {
 
 public:
 	void getSidesCount() override;
-	Rhombus(int a, int A, int B);
+	ObjRhombus(int a, int b, int c, int d, int A, int B, int C, int D);
 };

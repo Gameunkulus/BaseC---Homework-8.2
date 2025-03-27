@@ -2,13 +2,13 @@
 #include <iostream>;
 using namespace std;
 
-class figure {
+class ObjFigure {
 protected:
 
     int numSides = 0;
 
 public:
-    figure();
+    ObjFigure();
     virtual string getSides();
     virtual void getSidesCount();
 };

@@ -1,22 +1,36 @@
 #include <iostream>
 #include "Square.h"
 #include <string>
+#include "..\FigureException.h"
 
 using namespace std;
 
-void Square::getSidesCount() {
+void ObjSquare::getSidesCount() {
 
     cout << "Квадрат: " << endl << getSides() << endl;
 }
 
-Square::Square(int a): Fourangle(a,a,a,a,90,90,90,90){
+ObjSquare::ObjSquare(int a, int b, int c, int d, int A, int B, int C, int D): ObjFourangle(a, b, c, d, A, B, C, D){
 
     numSides = 4;
     if (a == 0 || b == 0 || c == 0 || d == 0) {
-        cout << "Ошибка, стороны четырехугольника не могут быть равны нулю." << endl;
-        return;
+        throw figureException("Ошибка, стороны квадрата не могут быть равны нулю.");
+    }
+    else if (a != b || b != c || c != d || d != a) {
+        throw figureException("Ошибка, стороны квадрата не могут быть не равны.");
+
+    }
+    else if (A != 90 || B != 90 || C != 90 || D != 90) {
+        throw figureException("Ошибка, углы квадрата не могут быть не равны 90 градусам.");
     }
     else {
         this->a = a;
+        this->b = b;
+        this->c = c;
+        this->d = d;
+        this->A = A;
+        this->B = B;
+        this->C = C;
+        this->D = D;
     };
 };

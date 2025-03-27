@@ -6,19 +6,19 @@
 
 using namespace std;
 
-string Triangle::getSides() {
+string ObjTriangle::getSides() {
     
     string text = "Стороны: a = " + to_string(a) + " b = " + to_string(b) + " c = " + to_string(c) + "\n" +
         "Углы : A = " + to_string(A) + " B = " + to_string(B) + " C = " + to_string(C);
     return text;
 };
 
-void Triangle::getSidesCount() {
+void ObjTriangle::getSidesCount() {
     
     cout << "Треугольник: " << endl << getSides() << endl;
 }
 
-Triangle::Triangle(int a, int b, int c, int A, int B, int C) {
+ObjTriangle::ObjTriangle(int a, int b, int c, int A, int B, int C) {
 
     numSides = 3;
     if (a == 0 || b == 0 || c == 0) {

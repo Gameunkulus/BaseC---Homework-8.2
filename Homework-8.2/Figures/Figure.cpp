@@ -5,7 +5,7 @@
 #include "FigureException.h"
 using namespace std;
 
-    figure::figure(){ 
+    ObjFigure::ObjFigure(){ 
         this->numSides = numSides;
         if (this->numSides != 0) { 
             throw figureException("Ошибка ввода данных."); 
@@ -13,6 +13,6 @@ using namespace std;
         
     }
 
-    string figure::getSides(){ return to_string(numSides);}
+    string ObjFigure::getSides(){ return to_string(numSides);}
 
-    void figure::getSidesCount(){ cout << "Фигура" << endl << "Количество сторон: " << getSides() << endl; }
+    void ObjFigure::getSidesCount(){ cout << "Фигура" << endl << "Количество сторон: " << getSides() << endl; }

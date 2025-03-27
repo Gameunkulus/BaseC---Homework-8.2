@@ -1,12 +1,12 @@
-#pragma once
-#include "Triangle.h"
+#pragma once;
+#include "Triangle.h";
 #include <iostream>;
 using namespace std;
 
 
-class RectTriangle : public Triangle {
+class ObjRectTriangle : public ObjTriangle {
 
 public:
 	void getSidesCount() override;
-	RectTriangle(int a, int b, int c, int A, int B);
+	ObjRectTriangle(int a, int b, int c, int A, int B, int C);
 };

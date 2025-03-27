@@ -1,13 +1,13 @@
-#pragma once
-#include "Triangle.h"
+#pragma once;
+#include "Triangle.h";
 #include <iostream>;
 using namespace std;
 
 
-class IsoTriangle : public Triangle {
+class ObjIsoTriangle : public ObjTriangle {
 
 public:
 	void getSidesCount() override;
-	IsoTriangle(int a, int b, int A, int B);
+	ObjIsoTriangle(int a, int b, int c, int A, int B, int C);
 };
 

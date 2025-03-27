@@ -3,9 +3,9 @@
 #include <iostream>;
 using namespace std;
 
-class Square : public Fourangle {
+class ObjSquare : public ObjFourangle {
 
 public:
 	void getSidesCount() override;
-	Square(int a);
+	ObjSquare(int a, int b, int c, int d, int A, int B, int C, int D);
 };

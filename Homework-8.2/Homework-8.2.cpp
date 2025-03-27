@@ -22,27 +22,28 @@ int main(int argc, char** argv)
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    Figure figure;
-    figure.getSidesCount();
-    Triangle triangle(10, 10, 10, 60, 60, 60);
-    triangle.getSidesCount();
-    Triangle wrongTriangle(10,10,10,90,90,90);
-    RectTriangle rectTriangle(10, 25, 15, 25, 65);
-    rectTriangle.getSidesCount();
-    IsoTriangle IsoTriangle(15, 10, 60, 20);
-    IsoTriangle.getSidesCount();
-    EquiTriangle EquiTriangle(15);
-    EquiTriangle.getSidesCount();
-    Fourangle fourangle(10, 10, 10, 10, 90, 90, 90, 90);
-    fourangle.getSidesCount();
-    Square square(10);
-    square.getSidesCount();
-    Rectangle rectangle(15, 20);
-    rectangle.getSidesCount();
-    Parallelogram parallelogram(10, 15, 30, 50);
-    parallelogram.getSidesCount();
-    Rhombus rhombus(15, 20, 30);
-    rhombus.getSidesCount();
+    ObjFigure objfigure;
+    objfigure.getSidesCount();
+    ObjTriangle objtriangle(10, 10, 10, 60, 60, 60);
+    objtriangle.getSidesCount();
+    ObjTriangle objwrongTriangle(10,10,10,90,90,90);
+    ObjRectTriangle objrectTriangle(10, 25, 90, 15, 25, 65);
+    objrectTriangle.getSidesCount();
+    ObjRectTriangle objWrongRectTriangle(10, 25, 180, 15, 25, 65);
+    ObjIsoTriangle objIsoTriangle(15, 10, 10, 60, 20, 20);
+    objIsoTriangle.getSidesCount();
+    ObjEquiTriangle objEquiTriangle(15, 15, 15, 60, 60, 60);
+    objEquiTriangle.getSidesCount();
+    ObjFourangle objfourangle(10, 10, 10, 10, 90, 90, 90, 90);
+    objfourangle.getSidesCount();
+    ObjSquare objsquare(10, 10, 10, 10, 90, 90, 90, 90);
+    objsquare.getSidesCount();
+    ObjRectangle objrectangle(15, 15, 15, 15, 20, 20, 20, 20);
+    objrectangle.getSidesCount();
+    ObjParallelogram objparallelogram(10, 15, 10, 15, 30, 50, 30, 50);
+    objparallelogram.getSidesCount();
+    ObjRhombus objrhombus(15, 15, 15, 15, 20, 30, 20,30);
+    objrhombus.getSidesCount();
 
 }
 
