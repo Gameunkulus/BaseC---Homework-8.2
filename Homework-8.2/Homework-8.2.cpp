@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <Windows.h>
+#include "Figures/FigureException.h"
 #include "Figures/Figure.h"
 #include "Figures/Triangles/Triangle.h"
 #include "Figures/Triangles/RectTriangle.h"
@@ -22,29 +23,112 @@ int main(int argc, char** argv)
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    ObjFigure objfigure;
-    objfigure.getSidesCount();
-    ObjTriangle objtriangle(10, 10, 10, 60, 60, 60);
-    objtriangle.getSidesCount();
-    ObjTriangle objwrongTriangle(10,10,10,90,90,90);
+    try {
+        ObjFigure objfigure;
+        objfigure.getSidesCount();
+    } 
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
+        ObjTriangle objtriangle(10, 10, 10, 60, 60, 60);
+        objtriangle.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
+        ObjTriangle objwrongTriangle(10,10,10,90,90,90);
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjRectTriangle objrectTriangle(10, 25, 90, 15, 25, 65);
     objrectTriangle.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjRectTriangle objWrongRectTriangle(10, 25, 180, 15, 25, 65);
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjIsoTriangle objIsoTriangle(15, 10, 10, 60, 20, 20);
     objIsoTriangle.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjEquiTriangle objEquiTriangle(15, 15, 15, 60, 60, 60);
     objEquiTriangle.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjFourangle objfourangle(10, 10, 10, 10, 90, 90, 90, 90);
     objfourangle.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjSquare objsquare(10, 10, 10, 10, 90, 90, 90, 90);
     objsquare.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjRectangle objrectangle(15, 15, 15, 15, 20, 20, 20, 20);
     objrectangle.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+    try {
     ObjParallelogram objparallelogram(10, 15, 10, 15, 30, 50, 30, 50);
     objparallelogram.getSidesCount();
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
+
+
+    try {
     ObjRhombus objrhombus(15, 15, 15, 15, 20, 30, 20,30);
     objrhombus.getSidesCount();
-
+    }
+    catch (const figureException& msg)
+    {
+        cout << msg.what() << endl;
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
